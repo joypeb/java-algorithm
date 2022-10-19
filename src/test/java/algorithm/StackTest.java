@@ -1,6 +1,6 @@
 package algorithm;
 
-import org.junit.jupiter.api.Assertions;
+import algorithm.stack.Stack;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
