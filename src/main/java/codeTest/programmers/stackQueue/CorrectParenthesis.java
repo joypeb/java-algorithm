@@ -2,6 +2,7 @@ package codeTest.programmers.stackQueue;
 
 public class CorrectParenthesis {
     //올바른 괄호
+    //레벨2
     class Solution {
         boolean solution(String s) {
             boolean answer = true;
