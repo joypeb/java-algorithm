@@ -3,15 +3,15 @@ package algorithm.stack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stack {
+public class Stack01 {
     private int[] arr = new int[10000];
     private List<Integer> arl = new ArrayList<>();
     private int pointer = 0;
 
-    public Stack() {
+    public Stack01() {
     }
 
-    public Stack(int size) {
+    public Stack01(int size) {
         this.arr = new int[size];
     }
 

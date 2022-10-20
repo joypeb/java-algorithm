@@ -1,14 +1,14 @@
 package algorithm;
 
-import algorithm.stack.Stack;
+import algorithm.stack.Stack01;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class StackTest {
+class Stack01Test {
     @Test
     void pushTest() {
-        Stack stack = new Stack();
+        Stack01 stack = new Stack01();
 
         stack.push(10);
         stack.push(20);

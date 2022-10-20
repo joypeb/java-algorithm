@@ -1,9 +1,10 @@
 package algorithm.stack;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,5 +28,27 @@ class Stack02Test {
         assertEquals(10,st.pop());
 
 
+    }
+
+    @Test
+    void isEmpty() {
+        Stack02 st = new Stack02();
+
+        assertTrue(st.isEmpty());
+        st.push(1);
+
+        assertFalse(st.isEmpty());
+
+        st.pop();
+
+        assertTrue(st.isEmpty());
+
+        st.pop();
+    }
+
+    @Test
+    void realStack() {
+        Stack<Integer> st = new Stack<>();
+        st.pop();
     }
 }
