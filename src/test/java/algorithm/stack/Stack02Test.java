@@ -57,4 +57,17 @@ class Stack02Test {
             st.pop();
         });
     }
+
+    @Test
+    void peek() {
+        Stack02 st = new Stack02();
+
+        assertThrows(EmptyStackException.class, () -> {
+            st.peek();
+        });
+
+        st.push(10);
+        assertEquals(10, st.peek());
+
+    }
 }

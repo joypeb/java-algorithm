@@ -36,4 +36,9 @@ public class Stack02 {
             return false;
         }
     }
+
+    public int peek() {
+        if(isEmpty()) throw new EmptyStackException();
+        else return this.arr[this.top-1];
+    }
 }
