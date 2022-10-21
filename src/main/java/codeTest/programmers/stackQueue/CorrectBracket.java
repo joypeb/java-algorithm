@@ -1,6 +1,6 @@
 package codeTest.programmers.stackQueue;
 
-public class CorrectParenthesis {
+public class CorrectBracket {
     //올바른 괄호
     //레벨2
     class Solution {
