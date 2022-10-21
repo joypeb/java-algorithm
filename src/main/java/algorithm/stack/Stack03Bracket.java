@@ -17,6 +17,10 @@ public class Stack03Bracket {
             } else if(x == ')') {
                 cnt--;
             }
+
+            if(cnt < 0) {
+                break;
+            }
         }
 
         if(cnt == 0) {
