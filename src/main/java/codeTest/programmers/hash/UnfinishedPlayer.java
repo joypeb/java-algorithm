@@ -33,8 +33,12 @@ public class UnfinishedPlayer {
     public static void main(String[] args) {
         UnfinishedPlayer unfinishedPlayer = new UnfinishedPlayer();
 
-        String[]  d = {"mislav", "stanko", "mislav", "ana"};
-        String[] a = {"stanko", "ana", "mislav"};
-        System.out.println(unfinishedPlayer.solution(d,a));
+        String[]  t1a = {"mislav", "stanko", "mislav", "ana"};
+        String[] t1b = {"stanko", "ana", "mislav"};
+
+        String[]  t2a = {"marina", "josipa", "nikola", "vinko", "filipa"};
+        String[] t2b = {"josipa", "filipa", "marina", "nikola"};
+        System.out.println(unfinishedPlayer.solution(t1a,t1b));
+        System.out.println(unfinishedPlayer.solution(t2a,t2b));
     }
 }
