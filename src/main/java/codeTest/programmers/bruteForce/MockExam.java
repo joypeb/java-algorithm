@@ -20,7 +20,7 @@ public class MockExam {
             if(supo2[i%supo2.length] == answers[i]) {
                 cnt[1]++;
             }
-            if(supo2[i%supo2.length] == answers[i]) {
+            if(supo3[i%supo3.length] == answers[i]) {
                 cnt[2]++;
             }
         }
@@ -29,14 +29,14 @@ public class MockExam {
 
         ArrayList<Integer> maxList = new ArrayList<>();
 
-        for(int i=0; i<cnt.length; i++) {
-            if(cnt[i] == max) {
-                maxList.add(i+1);
-            }
-        }
+        if(cnt[0] == max) maxList.add(1);
+        if(cnt[1] == max) maxList.add(2);
+        if(cnt[2] == max) maxList.add(3);
+
 
         int[] answer = new int[maxList.size()];
-        for(int i=0; i< answer.length; i++) {
+
+        for(int i =0; i<answer.length; i++) {
             answer[i] = maxList.get(i);
         }
 
