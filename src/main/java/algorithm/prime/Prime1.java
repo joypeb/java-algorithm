@@ -4,42 +4,46 @@ import java.util.Arrays;
 
 public class Prime1 {
     public static void main(String[] args) {
-        int[] arr = {13,17,19,23};
+        int[] arr = {13,17,19,80};
         boolean[] result = new boolean[arr.length];
         boolean[] result2 = new boolean[arr.length];
-        boolean[] result3 = new boolean[arr.length];
+        boolean[] resultSqrt = new boolean[arr.length];
 
         for(int i=0; i<arr.length; i++) {
-            //자기 자신 전까지
-            inner:for(int j=2; j<arr[i]; j++) {
-                if(j%arr[i] == 0) {
-                    result[i] = false;
-                    break inner;
-                }
-            }
-            result[i] = true;
-
-            //절반까지
-            inner2:for(int j=2; j<arr[i]/2; j++) {
-                if(j%arr[i] == 0) {
-                    result2[i] = false;
-                    break inner2;
-                }
-            }
-            result2[i] = true;
-
-            //루트까지
-            inner3:for(int j=2; j<Math.sqrt(arr[i]); j++) {
-                if(j%arr[i] == 0) {
-                    result3[i] = false;
-                    break inner3;
-                }
-            }
-            result3[i] = true;
+           result[i] = prime(arr[i]);
+           result2[i] = prime2(arr[i]);
+           resultSqrt[i] = primeSqrt(arr[i]);
         }
 
         System.out.println(Arrays.toString(result));
         System.out.println(Arrays.toString(result2));
-        System.out.println(Arrays.toString(result3));
+        System.out.println(Arrays.toString(resultSqrt));
+    }
+
+    public static boolean prime(int num) {
+        for(int i=2; i<num; i++) {
+            if(num%i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean prime2(int num) {
+        for(int i=2; i<num/2; i++) {
+            if(num%i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean primeSqrt(int num) {
+        for(int i=2; i<Math.sqrt(num); i++) {
+            if(num%i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
