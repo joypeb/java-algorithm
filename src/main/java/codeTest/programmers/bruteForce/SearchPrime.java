@@ -8,7 +8,7 @@ public class SearchPrime {
 
         //입력받은 numbers에서 숫자를 나눠서 조합하여 소수를 찾는다
 
-
+        
         return answer;
     }
 }
