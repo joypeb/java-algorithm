@@ -16,6 +16,11 @@ public class PrimeCallback {
         Operation operationSqrt = new SqrtOperation();
 
         System.out.println(primeCallback.isPrime(4, operationSqrt));
+
+        //lamda적용
+        System.out.println(primeCallback.isPrime(4, (a,b) -> a<b));
+        System.out.println(primeCallback.isPrime(6, (a,b) -> a<=b/2));
+        System.out.println(primeCallback.isPrime(8, (a,b) -> a*a<=b));
     }
 }
 
