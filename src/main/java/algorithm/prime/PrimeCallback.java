@@ -1,12 +1,9 @@
 package algorithm.prime;
 
 public class PrimeCallback {
-    boolean someOperation(int a, int b) {
-        return a < b;
-    }
 
-    boolean isPrime(int num) {
-        for(int i=2; someOperation(i, num); i++) {
+    boolean isPrime(int num, Operation operation) {
+        for(int i=2; operation.someOperation(i,num); i++) {
             if(num%i == 0) return false;
         }
         return true;
@@ -14,7 +11,38 @@ public class PrimeCallback {
 
     public static void main(String[] args) {
         PrimeCallback primeCallback = new PrimeCallback();
+        Operation operation1 = new NOperation();
+        Operation operation2 = new N2Operation();
+        Operation operationSqrt = new SqrtOperation();
 
-        System.out.println(primeCallback.isPrime(4));
+        System.out.println(primeCallback.isPrime(4, operationSqrt));
+    }
+}
+
+interface Operation {
+    boolean someOperation(int a, int b);
+}
+
+class NOperation implements Operation{
+
+    @Override
+    public boolean someOperation(int a, int b) {
+        return a<b;
+    }
+}
+
+class N2Operation implements Operation {
+
+    @Override
+    public boolean someOperation(int a, int b) {
+        return a<=(b/2);
+    }
+}
+
+class SqrtOperation implements Operation {
+
+    @Override
+    public boolean someOperation(int a, int b) {
+        return a<=Math.sqrt(b);
     }
 }
