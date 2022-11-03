@@ -41,5 +41,10 @@ public class RemoveMultipleNum {
 
         System.out.println(removeMultipleNum.removePrime(100));
 
+        //자기 자신은 건너뛰고 배수 출력
+        for(int i=2; i<=100; i++) {
+            System.out.println(i + " : " + i*2);
+        }
+
     }
 }
