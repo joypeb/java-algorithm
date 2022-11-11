@@ -21,9 +21,21 @@ public class SecretMap {
         return answer;
     }
 
+    public String binaryMake(int num) {
+        String b = "";
+        while(num > 0) {
+            b = num%2 + b;
+            num/=2;
+        }
+
+        return b;
+    }
+
     public static void main(String[] args) {
         SecretMap secretMap = new SecretMap();
 
+        String x = secretMap.binaryMake(10);
+        System.out.println(x);
 
     }
 }
