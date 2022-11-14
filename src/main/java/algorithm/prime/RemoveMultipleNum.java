@@ -20,7 +20,7 @@ public class RemoveMultipleNum {
             if(arr[i] == 0) continue;
 
             //n이 되기전까지 2배씩 증가
-            //자기 자신은 건너뛴다
+            //자기 자신은 건너뛴다 그래서 2를 곱한다
             for(int j=2*i; j<=n; j+=i) {
                 arr[j] = 0;
             }
