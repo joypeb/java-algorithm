@@ -16,6 +16,8 @@ public class QuickSort {
 
     public List<Integer> sort(List<Integer> arr) {
 
+        if(arr.size()<=1) return arr;
+
         //1. 기준값 뽑는 로직 구현
         int pivot = arr.get(arr.size()/2);
 
@@ -50,5 +52,7 @@ public class QuickSort {
         QuickSort quickSort = new QuickSort();
 
         result = quickSort.sort(list);
+
+        System.out.println(result);
     }
 }
