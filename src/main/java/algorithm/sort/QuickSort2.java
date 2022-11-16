@@ -5,9 +5,17 @@ import java.util.Arrays;
 public class QuickSort2 {
     int[] solution(int[] arr) {
         int pivot = arr[arr.length/2];
+        int leftIdx = 0;
+        int rightIdx = arr.length-1;
 
-        for(int i=0; i<arr.length; i++) {
-
+        while(leftIdx < arr.length/2) {
+            if(arr[leftIdx] < pivot) {
+                leftIdx++;
+            } else {
+                int num = arr[leftIdx];
+                arr[leftIdx] = arr[rightIdx];
+                arr[rightIdx] = num;
+            }
         }
 
         return arr;
