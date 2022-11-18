@@ -21,8 +21,8 @@ public class SearchAllAnagram4_4 {
             sHashMap.put(sarr[i],sHashMap.getOrDefault(sarr[i],0)+1);
         }
 
-        for(int i=tarr.length-1; i< sarr.length; i++) {
-            sHashMap.put(sarr[rt],sHashMap.getOrDefault(sarr[i],0)+1);
+        for(int i = rt; i< sarr.length; i++) {
+            sHashMap.put(sarr[i],sHashMap.getOrDefault(sarr[i],0)+1);
             if(tHashMap.equals(sHashMap)) {
                 cnt++;
             }
@@ -31,7 +31,6 @@ public class SearchAllAnagram4_4 {
                 sHashMap.remove(sarr[lt]);
             }
             lt++;
-            rt++;
         }
 
 
