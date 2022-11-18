@@ -35,7 +35,8 @@ public class CaesarCipher {
         CaesarCipher caesarCipher = new CaesarCipher();
 
         String test = "AB";
+        String test2 = "abcdefghijklmnopqrstuvwxyz";
 
-        System.out.println(caesarCipher.solution(test, 1));
+        System.out.println(caesarCipher.solution(test2, 1));
     }
 }
