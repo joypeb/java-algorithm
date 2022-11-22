@@ -10,16 +10,23 @@ public class GymClothes {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n;
 
+        Arrays.sort(lost);
+
         HashSet<Integer> hReserve = new HashSet<>();
         for(int x : reserve) {
             hReserve.add(x);
         }
 
         for(int i=0; i<lost.length; i++) {
-            if(hReserve.contains(lost[i])) {
+            if (hReserve.contains(lost[i])) {
                 hReserve.remove(lost[i]);
+                lost[i] = 0;
             }
-            else if(hReserve.contains(lost[i]-1)) {
+        }
+
+        for(int i=0; i<lost.length; i++) {
+            if(lost[i] == 0) continue;
+            if(hReserve.contains(lost[i]-1)) {
                 hReserve.remove(lost[i]-1);
             } else if(hReserve.contains(lost[i]+1)) {
                 hReserve.remove(lost[i]+1);
@@ -46,9 +53,9 @@ public class GymClothes {
         int[] lost3 = {2, 4};
         int[] reserve3 = {3};
 
-        int n4 = 5;
-        int[] lost4 = {1,3};
-        int[] reserve4 = {2,4};
+        int n4 = 4;
+        int[] lost4 = {2,3};
+        int[] reserve4 = {3,4};
 
         System.out.println(gymClothes.solution(n,lost,reserve));
         System.out.println(gymClothes.solution(n2,lost2,reserve2));
