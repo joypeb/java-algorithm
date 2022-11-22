@@ -42,7 +42,9 @@ public class JadenCase {
             if(arr[i] == 32) {
                 sb.append(arr[i]);
                 continue;
-            } else if(arr[i-1] == 32) {
+            }
+
+            if(arr[i-1] == 32) {
                 if (!Character.isDigit(arr[i])) {
                     sb.append((char) (arr[i] - 32));
                 } else {
