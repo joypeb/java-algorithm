@@ -2,23 +2,28 @@ package pccp;
 
 public class JadenCase {
     public String solution(String s) {
-        String answer = "";
-        char[] arr = s.toLowerCase().toCharArray();
+        String[] arr = s.toLowerCase().split(" ");
+        StringBuilder sb = new StringBuilder();
 
-        if(!(48 <= arr[0] && arr[0] <= 57)) {
-            arr[0] -= 32;
+        if(!(48 <= arr[0].charAt(0) && arr[0].charAt(0) <= 57)) {
+            char first = (char)(arr[0].charAt(0) - 32);
         }
 
-        answer += arr[0];
+        for(int i=0; i<arr.length; i++) {
+            char first = 0;
 
-        for(int i=1; i<arr.length; i++) {
-            if(arr[i-1] == 32 && !(48 <= arr[i] && arr[i] <= 57)) {
-                arr[i] -= 32;
+            if(!(48 <= arr[i].charAt(0) && arr[i].charAt(0) <= 57)) {
+                first = (char)(arr[i].charAt(0) - 32);
+            } else {
+                first = arr[i].charAt(0);
             }
-            answer+=arr[i];
+
+            sb.append(first);
+            sb.append(arr[i].substring(1));
+            sb.append(" ");
         }
 
-        return answer;
+        return sb.toString().trim();
     }
 
     public static void main(String[] args) {
