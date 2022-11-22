@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.recursion;
 
 public class Print1To100 {
     public static void print1To100(int n) {
