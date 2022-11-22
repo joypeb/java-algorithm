@@ -1,4 +1,4 @@
-package codeTest.programmers.level1;
+package pccp;
 
 import java.util.Arrays;
 
