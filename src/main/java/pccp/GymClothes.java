@@ -9,22 +9,12 @@ public class GymClothes {
     //체육복
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = 0;
-        int dup = 0;
 
-        HashSet<Integer> hashSetReserve = new HashSet<>();
-
-        for(int x : reserve) {
-            hashSetReserve.add(x);
+        if(lost.length <= reserve.length) {
+            return n;
+        } else {
+            answer = n - (lost.length - reserve.length);
         }
-
-        for(int x : lost) {
-            if(hashSetReserve.contains(x)) dup++;
-        }
-
-        int angel = lost.length - reserve.length;
-        if(angel < 0) angel = 0;
-
-        answer = n - angel;
 
         return answer;
     }
