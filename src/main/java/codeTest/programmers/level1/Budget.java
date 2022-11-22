@@ -1,11 +1,26 @@
 package codeTest.programmers.level1;
 
+import java.util.Arrays;
+
 public class Budget {
     //예산
     public int solution(int[] d, int budget) {
         int answer = 0;
+        int sum = 0;
 
         //최대로 부서에게 지원해 주려면 제일 낮은 금액을 신청한 부서들을 먼저 확인해야한다
+        Arrays.sort(d);
+
+        for(int x : d) {
+            if(sum == budget) {
+                break;
+            } else if(sum > budget) {
+                answer--;
+                break;
+            }
+            sum+=x;
+            answer++;
+        }
 
         return answer;
     }
