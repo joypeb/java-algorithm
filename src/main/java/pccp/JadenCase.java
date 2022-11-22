@@ -12,6 +12,11 @@ public class JadenCase {
         for(int i=0; i<arr.length; i++) {
             char first = 0;
 
+            if (arr[i].length() == 0) {
+                sb.append(" ");
+                continue;
+            }
+
             if(!(48 <= arr[i].charAt(0) && arr[i].charAt(0) <= 57)) {
                 first = (char)(arr[i].charAt(0) - 32);
             } else {
@@ -29,7 +34,7 @@ public class JadenCase {
     public static void main(String[] args) {
         JadenCase jadenCase = new JadenCase();
 
-        String s = "3people unFollowed me";
+        String s = "3people unFollowed  me";
 
         System.out.println(jadenCase.solution(s));
     }
