@@ -2,10 +2,10 @@ package pccp;
 
 public class JadenCase {
     public String solution(String s) {
-        String[] arr = s.toLowerCase().split(" ");
+        char[] arr = s.toLowerCase().toCharArray();
         StringBuilder sb = new StringBuilder();
 
-        if(!(48 <= arr[0].charAt(0) && arr[0].charAt(0) <= 57)) {
+        /*if(!(48 <= arr[0].charAt(0) && arr[0].charAt(0) <= 57)) {
             char first = (char)(arr[0].charAt(0) - 32);
         }
 
@@ -25,16 +25,41 @@ public class JadenCase {
 
             sb.append(first);
             sb.append(arr[i].substring(1));
-            sb.append(" ");
+            if(!(i == arr.length-1)) {
+                sb.append(" ");
+            }
+        }*/
+
+        if(Character.isDigit(arr[0])) {
+            sb.append(arr[0]);
+        } else if(!Character.isDigit(arr[0])) {
+            sb.append((char)(arr[0]-32));
+        } else if(arr[0] == 32){
+            sb.append(arr[0]);
         }
 
-        return sb.toString().trim();
+        for(int i=1; i<arr.length; i++) {
+            if(arr[i] == 32) {
+                sb.append(arr[i]);
+                continue;
+            } else if(arr[i-1] == 32) {
+                if (!Character.isDigit(arr[i])) {
+                    sb.append((char) (arr[i] - 32));
+                } else {
+                    sb.append(arr[i]);
+                }
+            } else{
+                sb.append(arr[i]);
+            }
+        }
+
+        return sb.toString();
     }
 
     public static void main(String[] args) {
         JadenCase jadenCase = new JadenCase();
 
-        String s = "3people unFollowed  me";
+        String s = " 3peOple unFollowed  me ";
 
         System.out.println(jadenCase.solution(s));
     }
