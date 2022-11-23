@@ -1,5 +1,7 @@
 package codeTest.codeUp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CodeUp_1855 {
@@ -15,5 +17,18 @@ public class CodeUp_1855 {
         int n = sc.nextInt();
 
         System.out.println(fibo(n));
+
+        List<Integer> list = new ArrayList<>();
+
+        list.add(1);
+        list.add(1);
+
+        for(int i=2; i<n; i++){
+            list.add(list.get(i-1) + list.get(i-2));
+        }
+
+        for(int x : list) {
+            System.out.print(x + " ");
+        }
     }
 }
