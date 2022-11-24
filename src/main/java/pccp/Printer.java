@@ -17,10 +17,25 @@ public class Printer {
             priLoc.offer(i);
         }
 
-        Integer[] arr = Arrays.stream(priorities).boxed().toArray(Integer[]::new);
-        Arrays.sort(arr, Collections.reverseOrder());
+        Arrays.sort(priorities);
 
+        //[1,2,2,3]
 
+        while(true) {
+            if(priorities[priorities.length-1-answer] == pri.peek()) {
+                if(location == pri.peek()) {
+                    answer++;
+                    break;
+                }
+                pri.poll();
+                priLoc.poll();
+
+                answer++;
+            } else {
+                pri.offer(pri.poll());
+                priLoc.offer(priLoc.poll());
+            }
+        }
 
         return answer;
     }
