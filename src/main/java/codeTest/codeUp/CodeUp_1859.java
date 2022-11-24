@@ -1,8 +1,10 @@
-package CodeUp;
+package codeTest.codeUp;
 
 import java.util.Scanner;
 
 public class CodeUp_1859 {
+    //별찍기
+
     public void triangle(int num, String now) {
        if(num == now.length()-1) {
            return;
