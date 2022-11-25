@@ -1,5 +1,6 @@
 package codeTest.codeUp;
 
+import java.awt.print.Pageable;
 import java.util.Scanner;
 
 public class CodeUp_2623 {
@@ -21,11 +22,19 @@ public class CodeUp_2623 {
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        int result = 0;
-
-        if(n > m) result = gcd(n,m);
-        else result = gcd(m,n);
+        int result = gcd(n,m);
 
         System.out.println(result);
+
+        while(true) {
+            if(n > m) {
+                n = n-m;
+            } else if(m > n) {
+                m = m-n;
+            } else {
+                break;
+            }
+        }
+        System.out.println(m);
     }
 }
