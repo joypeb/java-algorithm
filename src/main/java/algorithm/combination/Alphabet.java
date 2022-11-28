@@ -14,11 +14,18 @@ public class Alphabet {
         return alphaList;
     }
 
+    public static void recurAlpha(char a){
+        if(a > 'Z') return;
+        System.out.print(a + " ");
+        recurAlpha((char)(a+1));
+    }
+
     public static void main(String[] args) {
         Alphabet alphabet = new Alphabet();
 
         List<Character> alpha = alphabet.alpha();
-
         System.out.println(alpha.toString());
+
+        recurAlpha('A');
     }
 }
