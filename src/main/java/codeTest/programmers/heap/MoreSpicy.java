@@ -14,10 +14,13 @@ public class MoreSpicy {
             pq.add(scoville[i]);
         }
 
+
         while(pq.size() >= 2 && pq.peek() < K) {
             pq.add(pq.poll() + (pq.poll()*2));
             answer++;
         }
+
+        if(pq.peek() < K) return -1;
 
         return answer;
     }
