@@ -1,6 +1,6 @@
 package inflearn.java_algorithm;
 
-public class BinaryRecursive {
+public class BinaryRecursive7_2 {
     static void dfs(int n) {
         if(n == 0) return;
         else {
