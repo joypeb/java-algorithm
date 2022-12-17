@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Inf8_3MaxScore {
     //최대점수 구하기
-    static int n, m, total;
-    static int[] question, time;
+    private static int n, m, total;
+    private static int[] question, time;
 
-    static void dfs(int l, int t, int sum) {
+    private static void dfs(int l, int t, int sum) {
         if(t > m) return;
         else if(total < sum) total = sum;
         if(l == n) return;
