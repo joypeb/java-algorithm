@@ -16,18 +16,32 @@ public class LongJump {
         while(!q.isEmpty()) {
             long result = q.poll();
             if(result == n) cnt+=1;
-            else if(result > n) continue;
 
-            q.add(result+1);
-            q.add(result+2);
+            if(result+1 <= n)
+                q.add(result+1);
+            if(result+2 <= n)
+                q.add(result+2);
         }
+    }
+
+    static void dfs(int n, int sum) {
+        if(sum == n) {
+            cnt+=1;
+            return;
+        }
+
+        if(sum > n) return;
+
+        dfs(n,sum+1);
+        dfs(n,sum+2);
     }
 
     public long solution(int n) {
         long answer = 0;
 
-        bfs(n);
+        //bfs(n);
 
+        dfs(n,0);
         answer = cnt%1234567;
 
         return answer;
@@ -36,6 +50,6 @@ public class LongJump {
     public static void main(String[] args) {
         LongJump longJump = new LongJump();
 
-        System.out.println(longJump.solution(3));
+        System.out.println(longJump.solution(100));
     }
 }
