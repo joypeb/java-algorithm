@@ -3,25 +3,25 @@ package inflearn.java_algorithm;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
-
 class Wedding implements Comparable<Wedding> {
-    int s,e;
+    int t, c;
 
-    public Wedding(int s, int e) {
-        this.s = s;
-        this.e = e;
+    public Wedding(int t, int c) {
+        this.t = t;
+        this.c = c;
     }
 
     @Override
     public int compareTo(Wedding o) {
-        if(this.s == o.s) return o.e - this.e;
-        return this.s - o.s;
+        if(this.t == o.t) return this.c - o.c;
+        return this.t - o.t;
     }
 }
 
-public class Inf9_3Wedding {
+public class Inf9_3Wedding{
+
     //결혼식
-    public static void main(String[] args) {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
@@ -32,7 +32,8 @@ public class Inf9_3Wedding {
             int s = sc.nextInt();
             int e = sc.nextInt();
 
-            arr.add(new Wedding(s,e));
+            arr.add(new Wedding(s,0));
+            arr.add(new Wedding(e,1));
         }
 
         Collections.sort(arr);
@@ -40,19 +41,17 @@ public class Inf9_3Wedding {
         int cnt = 0, max = 0;
         int start = 0, end = 0;
 
-
         for(Wedding w : arr) {
-            if(start <= w.s && w.s < end) {
+            if(w.c != 1) {
                 cnt++;
-                max = Math.max(cnt, max);
             } else {
-                cnt = 1;
-                start = w.s;
-                end = w.e;
+                cnt--;
             }
-            System.out.println(w.s + ", " + w.e + ", " + cnt);
+
+            max = Math.max(cnt, max);
         }
 
         System.out.println(max);
+
     }
 }
