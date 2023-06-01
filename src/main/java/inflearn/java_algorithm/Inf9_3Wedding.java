@@ -13,7 +13,7 @@ class Wedding implements Comparable<Wedding> {
 
     @Override
     public int compareTo(Wedding o) {
-        if(this.t == o.t) return this.c - o.c;
+        if(this.t == o.t) return o.c - this.c;
         return this.t - o.t;
     }
 }
