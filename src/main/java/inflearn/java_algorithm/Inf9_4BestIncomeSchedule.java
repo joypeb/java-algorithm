@@ -59,17 +59,16 @@ public class Inf9_4BestIncomeSchedule {
 
         Collections.sort(arr);
 
-        for(Schedule s : arr) {
-            if(s.d == max) {
-                pq.add(s.m);
-            } else {
-                result += pq.poll();
-                max--;
-                pq.add(s.m);
-            }
-        }
+        int j = 0, n = arr.size();
 
-        result += pq.poll();
+        for(int i=max; i>=1; i--) {
+            for(; j<n; j++) {
+                if(arr.get(j).d < i) break;
+                pq.offer(arr.get(j).m);
+            }
+            if(!pq.isEmpty())
+                result += pq.poll();
+        }
 
         return result;
     }
