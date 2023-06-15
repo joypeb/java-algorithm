@@ -17,6 +17,8 @@ public class NewRecommendId {
             .replace(",","").replace("<","").replace(">","").replace("/","")
             .replace("?","");*/
 
+        answer = new_id.replaceAll("[^a-z0-9-_.]","");
+
         for(int i=0; i<new_id.length(); i++) {
             char c = new_id.charAt(i);
 
