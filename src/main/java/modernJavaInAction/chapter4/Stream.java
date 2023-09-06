@@ -26,6 +26,9 @@ public class Stream {
 
     public static void main(String[] args) {
 
+        System.out.println(test("hi", "hello", "안녕"));
+        System.out.println(test("hi"));
+
         //칼로리가 400미만인 요리를 구할때
         //자바7까지의 코드
         List<Dish> lowCaloricDishes = new ArrayList<>();
@@ -76,5 +79,14 @@ public class Stream {
         * 하나의 흐름으로 이어지게 만들었다.
         * 이러한 코드는 가독성이 좋아지고 명확성이 유지된다
         * */
+    }
+
+
+    private static String test(String... str) {
+        if(str.length > 2) {
+            return "2초과 " + Arrays.stream(str).reduce((x, y) -> x + ", " + y).get();
+        } else {
+            return "2이하 " + Arrays.stream(str).reduce((x, y) -> x + ", " + y).get();
+        }
     }
 }
